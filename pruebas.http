@@ -1,0 +1,35 @@
+### Registrar producto válido - debe responder 201
+POST http://localhost:8080/api/productos
+Content-Type: application/json
+
+{
+  "nombre": "Mochila",
+  "precio": 25.50,
+  "stock": 10
+}
+
+### Registrar producto con precio inválido - debe responder 400
+POST http://localhost:8080/api/productos
+Content-Type: application/json
+
+{
+  "nombre": "Regla",
+  "precio": 0,
+  "stock": 15
+}
+
+### Registrar producto con stock negativo - debe responder 400
+POST http://localhost:8080/api/productos
+Content-Type: application/json
+
+{
+  "nombre": "Cartuchera",
+  "precio": 4.00,
+  "stock": -2
+}
+
+### Eliminar producto existente - debe responder 204
+DELETE http://localhost:8080/api/productos/3
+
+### Eliminar producto inexistente - debe responder 404
+DELETE http://localhost:8080/api/productos/3
